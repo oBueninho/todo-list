@@ -1,11 +1,13 @@
 import { Text, StyleSheet, View, Button } from "react-native";
 import _tarefa from "../types/tarefa";
 
-export default function Tarefa(props:{
+type _tarefaProps={
     dados:_tarefa, 
     handleToggleComplete: any,
     handleDeletePress: any
-}){
+};
+
+export default function Tarefa(props:_tarefaProps){
     return <View style={[styles.view, props.dados.concluida ? styles.concluido : {}]}>
                 <View style = {styles.ViewTexto}><Text style = {props.dados.concluida ? styles.textoConcluido : {}}>Tarefa {props.dados.id}: {props.dados.texto}</Text></View>
                 <View style={styles.botoes}>
